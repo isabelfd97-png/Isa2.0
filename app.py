@@ -48,7 +48,7 @@ Job descriptions:
 """
 
     response = claude.messages.create(
-        model="claude-3-sonnet-20240229",
+        model="claude-3-5-sonnet-latest",
         max_tokens=800,
         messages=[
             {"role": "user", "content": prompt}
@@ -68,6 +68,5 @@ def home():
 
 
 if __name__ == "__main__":
-    # ⚠️ MUY IMPORTANTE: usar PORT dinámico en Render
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
