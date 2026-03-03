@@ -1,221 +1,401 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isa 2.0 - Career Market Analyst</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 800px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 60px 40px;
-            text-align: center;
-        }
-        
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .subtitle {
-            font-size: 1.3em;
-            color: #666;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-        
-        .description {
-            text-align: left;
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .description h2 {
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            color: #667eea;
-        }
-        
-        .features {
-            text-align: left;
-            margin-bottom: 30px;
-        }
-        
-        .features h3 {
-            margin-bottom: 15px;
-            color: #764ba2;
-        }
-        
-        .features ul {
-            list-style-position: inside;
-            margin-left: 0;
-        }
-        
-        .features li {
-            margin-bottom: 10px;
-            padding-left: 10px;
-        }
-        
-        .tech-stack {
-            background: #f0f4ff;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            text-align: left;
-        }
-        
-        .tech-stack h3 {
-            margin-bottom: 15px;
-            color: #667eea;
-        }
-        
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .tech-tag {
-            background: #667eea;
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.9em;
-        }
-        
-        .links {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid #667eea;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-        }
-        
-        .btn-secondary {
-            background: white;
-            color: #667eea;
-        }
-        
-        .btn-secondary:hover {
-            background: #f8f9fa;
-        }
-        
-        .footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            color: #999;
-            font-size: 0.9em;
-        }
-        
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2em;
-            }
-            
-            .container {
-                padding: 40px 25px;
-            }
-            
-            .links {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-        }
-    </style>
+    <title>Isa 2.0 - Career Agent</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Isa 2.0 😌</h1>
-        <p class="subtitle">Strategic Career Market Analyst</p>
-        
-        <div class="description">
-            <h2>About Isa</h2>
-            <p>Isa is an intelligent career analysis tool powered by Claude AI and Telegram. Send job descriptions and get strategic insights about the job market, repeated skills, AI-related signals, and culture indicators.</p>
-        </div>
-        
-        <div class="features">
-            <h3>Key Features</h3>
-            <ul>
-                <li>Analyze multiple job descriptions in one message</li>
-                <li>Identify repeated skills across positions</li>
-                <li>Detect AI-related signals in job postings</li>
-                <li>Analyze company culture signals (pressure vs stability)</li>
-                <li>Get personalized strategic insights</li>
-            </ul>
-        </div>
-        
-        <div class="tech-stack">
-            <h3>Technology Stack</h3>
-            <div class="tech-tags">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Flask</span>
-                <span class="tech-tag">Claude AI</span>
-                <span class="tech-tag">Telegram API</span>
-                <span class="tech-tag">React</span>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // ── DESIGN SYSTEM ─────────────────────────────────────────────────────────────
+        const T = {
+          // Backgrounds
+          bg: "#faf9f7",
+          surface: "#f4f2ee",
+          surfaceHover: "#eeebe5",
+          white: "#ffffff",
+
+          // Text
+          ink: "#1a1916",
+          inkMid: "#3d3b36",
+          inkSoft: "#7a7670",
+          inkFaint: "#b0ada6",
+
+          // Borders
+          line: "#e8e4dc",
+          lineMid: "#d9d4cb",
+
+          // Semantic — soft, warm
+          sage:   { text: "#3d6b57", bg: "#eef4f0", border: "#c4ddd2" },
+          amber:  { text: "#8a5e1e", bg: "#fdf5e6", border: "#e8d09a" },
+          rose:   { text: "#8b3a3a", bg: "#fdf0f0", border: "#e8b8b8" },
+          slate:  { text: "#3a4f6b", bg: "#eef2f8", border: "#b8cce4" },
+          stone:  { text: "#6b6560", bg: "#f4f2ee", border: "#d4cfc7" },
+        };
+
+        const FONT_DISPLAY = "'Playfair Display', Georgia, serif";
+        const FONT_BODY = "'DM Sans', 'Segoe UI', sans-serif";
+
+        const TODAY = new Date().toLocaleDateString("es-ES", {
+          weekday: "long", year: "numeric", month: "long", day: "numeric"
+        });
+
+        async function callClaude(system, user, maxTokens = 1500) {
+          const res = await fetch("https://api.anthropic.com/v1/messages", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              model: "claude-sonnet-4-20250514",
+              max_tokens: maxTokens,
+              system,
+              messages: [{ role: "user", content: user }],
+            }),
+          });
+          const data = await res.json();
+          return data.content?.find(b => b.type === "text")?.text || "";
+        }
+
+        function parseJSON(text) {
+          try { return JSON.parse(text.replace(/```json|```/g, "").trim()); }
+          catch { return null; }
+        }
+
+        // ── PRIMITIVES ────────────────────────────────────────────────────────────────
+
+        function Badge({ text, color = "slate", size = "sm" }) {
+          const c = T[color] || T.slate;
+          return (
+            <span style={{
+              background: c.bg, color: c.text, border: `1px solid ${c.border}`,
+              borderRadius: 4, padding: size === "sm" ? "2px 8px" : "4px 12px",
+              fontSize: size === "sm" ? 11 : 12, fontWeight: 500,
+              fontFamily: FONT_BODY, flexShrink: 0, whiteSpace: "nowrap",
+              letterSpacing: "0.01em"
+            }}>{text}</span>
+          );
+        }
+
+        function ScoreBar({ label, score }) {
+          const col = score >= 75 ? T.sage : score >= 50 ? T.amber : T.rose;
+          return (
+            <div style={{ marginBottom: 18 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 7 }}>
+                <span style={{ fontSize: 13, color: T.inkMid, fontFamily: FONT_BODY }}>{label}</span>
+                <span style={{ fontSize: 13, fontWeight: 600, color: col.text, fontFamily: FONT_BODY }}>{score}</span>
+              </div>
+              <div style={{ height: 3, background: T.line, borderRadius: 99, overflow: "hidden" }}>
+                <div style={{ height: "100%", width: `${score}%`, background: col.text, borderRadius: 99, opacity: 0.7 }} />
+              </div>
             </div>
-        </div>
-        
-        <div class="links">
-            <a href="https://github.com/isabelferrer-dalmau/Isa2.0" class="btn btn-primary">View on GitHub</a>
-            <a href="#readme" class="btn btn-secondary">Documentation</a>
-        </div>
-        
-        <div class="footer">
-            <p>Built with ❤️ for career-focused product designers</p>
-        </div>
-    </div>
+          );
+        }
+
+        function Accordion({ title, badge, badgeColor, children, defaultOpen = false }) {
+          const [open, setOpen] = useState(defaultOpen);
+          return (
+            <div style={{ borderBottom: `1px solid ${T.line}` }}>
+              <button onClick={() => setOpen(!open)} style={{
+                width: "100%", background: "none", border: "none", cursor: "pointer",
+                display: "flex", alignItems: "center", justifyContent: "space-between",
+                padding: "20px 0", gap: 12, fontFamily: FONT_BODY
+              }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, flex: 1, flexWrap: "wrap" }}>
+                  <span style={{ fontSize: 14, fontWeight: 500, color: T.ink, textAlign: "left" }}>{title}</span>
+                  {badge && <Badge text={badge} color={badgeColor} />}
+                </div>
+                <span style={{
+                  fontSize: 11, color: T.inkFaint,
+                  transform: open ? "rotate(180deg)" : "none",
+                  transition: "transform 0.25s", flexShrink: 0
+                }}>▾</span>
+              </button>
+              {open && <div style={{ paddingBottom: 22 }}>{children}</div>}
+            </div>
+          );
+        }
+
+        function Rewrite({ before, after, labelBefore = "Actual", labelAfter = "Propuesta" }) {
+          return (
+            <div style={{ marginTop: 14 }}>
+              <div style={{
+                background: T.rose.bg, border: `1px solid ${T.rose.border}`,
+                borderRadius: 6, padding: "13px 16px", fontSize: 13,
+                color: T.rose.text, marginBottom: 8, lineHeight: 1.75, fontFamily: FONT_BODY
+              }}>
+                <span style={{ fontWeight: 600, display: "block", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 5, opacity: 0.7 }}>{labelBefore}</span>
+                {before}
+              </div>
+              <div style={{
+                background: T.sage.bg, border: `1px solid ${T.sage.border}`,
+                borderRadius: 6, padding: "13px 16px", fontSize: 13,
+                color: T.sage.text, lineHeight: 1.75, fontFamily: FONT_BODY
+              }}>
+                <span style={{ fontWeight: 600, display: "block", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 5, opacity: 0.7 }}>{labelAfter}</span>
+                {after}
+              </div>
+            </div>
+          );
+        }
+
+        function Note({ children }) {
+          return (
+            <p style={{
+              fontSize: 13, color: T.inkSoft, lineHeight: 1.8,
+              marginTop: 12, marginBottom: 0, fontFamily: FONT_BODY
+            }}>{children}</p>
+          );
+        }
+
+        function Bullets({ items, color }) {
+          return (
+            <ul style={{ margin: "10px 0 0", paddingLeft: 18 }}>
+              {items.map((it, i) => (
+                <li key={i} style={{ fontSize: 13, color: color || T.inkMid, lineHeight: 1.9, fontFamily: FONT_BODY }}>{it}</li>
+              ))}
+            </ul>
+          );
+        }
+
+        function SubNav({ tabs, active, onChange }) {
+          return (
+            <div style={{ display: "flex", gap: 0, borderBottom: `1px solid ${T.line}`, marginBottom: 32, overflowX: "auto" }}>
+              {tabs.map(t => (
+                <button key={t.id} onClick={() => onChange(t.id)} style={{
+                  background: "none", border: "none", cursor: "pointer",
+                  padding: "10px 18px", fontSize: 12, fontWeight: active === t.id ? 600 : 400,
+                  color: active === t.id ? T.ink : T.inkFaint,
+                  borderBottom: active === t.id ? `2px solid ${T.ink}` : "2px solid transparent",
+                  whiteSpace: "nowrap", fontFamily: FONT_BODY,
+                  letterSpacing: active === t.id ? "0.01em" : "0",
+                  transition: "all 0.15s"
+                }}>{t.label}</button>
+              ))}
+            </div>
+          );
+        }
+
+        function Btn({ onClick, disabled, children, variant = "primary", small = false }) {
+          const variants = {
+            primary: { background: disabled ? T.line : T.ink, color: disabled ? T.inkFaint : T.white, border: "none" },
+            ghost:   { background: "transparent", color: T.inkMid, border: `1px solid ${T.lineMid}` },
+            sage:    { background: T.sage.bg, color: T.sage.text, border: `1px solid ${T.sage.border}` },
+          };
+          const s = variants[variant];
+          return (
+            <button onClick={onClick} disabled={disabled} style={{
+              ...s, borderRadius: 6, padding: small ? "7px 14px" : "10px 20px",
+              fontSize: small ? 12 : 13, fontWeight: 500, cursor: disabled ? "not-allowed" : "pointer",
+              fontFamily: FONT_BODY, transition: "all 0.15s", letterSpacing: "0.01em"
+            }}>{children}</button>
+          );
+        }
+
+        function Textarea({ value, onChange, placeholder, rows = 4 }) {
+          return (
+            <textarea value={value} onChange={e => onChange(e.target.value)}
+              placeholder={placeholder} rows={rows} style={{
+                width: "100%", border: `1px solid ${T.lineMid}`, borderRadius: 8,
+                padding: "13px 16px", fontSize: 13, color: T.inkMid,
+                fontFamily: FONT_BODY, lineHeight: 1.75, resize: "vertical",
+                background: T.white, boxSizing: "border-box", outline: "none",
+                transition: "border 0.15s"
+              }}
+              onFocus={e => e.target.style.borderColor = T.inkSoft}
+              onBlur={e => e.target.style.borderColor = T.lineMid}
+            />
+          );
+        }
+
+        function SectionTitle({ title, subtitle }) {
+          return (
+            <div style={{ marginBottom: 36 }}>
+              <h1 style={{
+                fontFamily: FONT_DISPLAY, fontSize: 32, fontWeight: 700,
+                color: T.ink, margin: "0 0 10px", lineHeight: 1.2, letterSpacing: "-0.02em"
+              }}>{title}</h1>
+              {subtitle && <p style={{ fontSize: 15, color: T.inkSoft, lineHeight: 1.7, margin: 0, fontFamily: FONT_BODY }}>{subtitle}</p>}
+            </div>
+          );
+        }
+
+        function Divider() {
+          return <div style={{ height: 1, background: T.line, margin: "32px 0" }} />;
+        }
+
+        // ── HOME ──────────────────────────────────────────────────────────────────────
+
+        const WEEKLY_TASK = {
+          title: "Reescribir los case studies del portfolio",
+          priority: "Prioridad alta",
+          why: "Es el gap más urgente. Sin narrativa de proceso, el portfolio no convierte aunque la estética sea buena.",
+        };
+
+        const TODAY_LEARN = [
+          { text: "Maggie Appleton — LLM Interface Patterns", time: "30 min", url: "https://maggieappleton.com" },
+          { text: "AI Agent UX Patterns — Nielsen Norman Group", time: "20 min", url: "https://www.nngroup.com" },
+          { text: "Apple Vision Pro HIG · Spatial Interactions", time: "15 min", url: "https://developer.apple.com/design/human-interface-guidelines/" },
+        ];
+
+        function HomeSection({ goTo }) {
+          const [msg, setMsg] = useState("");
+          const [loadingMsg, setLoadingMsg] = useState(true);
+          const [taskInput, setTaskInput] = useState("");
+          const [taskFeedback, setTaskFeedback] = useState(null);
+          const [loadingTask, setLoadingTask] = useState(false);
+
+          useEffect(() => {
+            (async () => {
+              try {
+                const text = await callClaude(
+                  `Eres un career coach cálido y real, nada corporativo. Genera un mensaje motivacional muy corto (máximo 2 frases) en español para Isabel Ferrer-Dalmau. Es Senior Product Designer en Aily Labs buscando nuevo trabajo. Hoy es ${TODAY}. Sé cercana e inspira sin ser cursi. Responde solo con el mensaje, sin comillas ni saludos.`,
+                  "Mensaje de hoy", 120
+                );
+                setMsg(text.trim().replace(/^["']|["']$/g, ""));
+              } catch {
+                setMsg("Un paso pequeño hecho bien vale más que diez a medias. Hoy elige uno.");
+              } finally { setLoadingMsg(false); }
+            })();
+          }, []);
+
+          const analyzeTask = async () => {
+            if (!taskInput.trim()) return;
+            setLoadingTask(true);
+            try {
+              const text = await callClaude(
+                `Eres career advisor para Isabel Ferrer-Dalmau, Senior Product Designer. Analiza el avance en su tarea y da feedback honesto y constructivo. Devuelve SOLO JSON sin markdown: {"score":1-10,"verdict":"Bien encaminada"|"Buen inicio"|"Necesita más foco"|"Hay que ajustar","verdictColor":"sage"|"amber"|"rose","strengths":["..."],"improvements":["..."],"nextStep":"acción concreta siguiente en 1 frase"}`,
+                `Tarea: "${WEEKLY_TASK.title}"\n\nAvance de Isabel:\n${taskInput}`
+              );
+              setTaskFeedback(parseJSON(text));
+            } catch {} finally { setLoadingTask(false); }
+          };
+
+          const scores = [{ label: "LinkedIn", score: 53 }, { label: "CV", score: 56 }, { label: "Portfolio", score: 51 }];
+
+          return (
+            <div>
+              <div style={{ marginBottom: 52 }}>
+                <p style={{ fontSize: 12, color: T.inkFaint, textTransform: "capitalize", letterSpacing: "0.04em", marginBottom: 16, fontFamily: FONT_BODY }}>{TODAY}</p>
+                <h1 style={{ fontFamily: FONT_DISPLAY, fontSize: 40, fontWeight: 700, color: T.ink, margin: "0 0 20px", lineHeight: 1.15, letterSpacing: "-0.02em" }}>
+                  Hola, Isabel.
+                </h1>
+                <div style={{ minHeight: 48, maxWidth: 480 }}>
+                  {loadingMsg
+                    ? <p style={{ fontSize: 15, color: T.inkFaint, fontStyle: "italic", fontFamily: FONT_BODY, margin: 0 }}>Cargando mensaje del día...</p>
+                    : <p style={{ fontSize: 16, color: T.inkSoft, lineHeight: 1.85, fontStyle: "italic", fontFamily: FONT_DISPLAY, margin: 0 }}>"{msg}"</p>
+                  }
+                </div>
+              </div>
+
+              <div style={{ marginBottom: 44 }}>
+                <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.1em", color: T.inkFaint, fontWeight: 600, marginBottom: 14, fontFamily: FONT_BODY }}>Estado actual</p>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 12 }}>
+                  {scores.map(({ label, score }) => {
+                    const col = score >= 75 ? T.sage : score >= 50 ? T.amber : T.rose;
+                    return (
+                      <button key={label} onClick={() => goTo("analysis")} style={{
+                        background: T.white, border: `1px solid ${T.line}`, borderRadius: 10,
+                        padding: "22px 16px", textAlign: "center", cursor: "pointer",
+                        transition: "all 0.15s", fontFamily: FONT_BODY
+                      }}
+                        onMouseEnter={e => { e.currentTarget.style.borderColor = T.lineMid; e.currentTarget.style.transform = "translateY(-1px)"; }}
+                        onMouseLeave={e => { e.currentTarget.style.borderColor = T.line; e.currentTarget.style.transform = "translateY(0)"; }}>
+                        <div style={{ fontSize: 32, fontWeight: 800, color: col.text, lineHeight: 1, fontFamily: FONT_DISPLAY }}>{score}</div>
+                        <div style={{ fontSize: 11, color: T.inkFaint, marginTop: 6, letterSpacing: "0.04em" }}>{label}</div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <Divider />
+
+              <div style={{ marginBottom: 44 }}>
+                <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.1em", color: T.inkFaint, fontWeight: 600, marginBottom: 16, fontFamily: FONT_BODY }}>Tarea de la semana</p>
+                <div style={{ background: T.white, border: `1px solid ${T.line}`, borderRadius: 10, padding: "24px 26px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, marginBottom: 8 }}>
+                    <h3 style={{ fontFamily: FONT_DISPLAY, fontSize: 17, fontWeight: 600, color: T.ink, margin: 0, lineHeight: 1.4 }}>{WEEKLY_TASK.title}</h3>
+                    <Badge text={WEEKLY_TASK.priority} color="rose" />
+                  </div>
+                  <p style={{ fontSize: 13, color: T.inkSoft, lineHeight: 1.75, margin: "0 0 20px", fontFamily: FONT_BODY }}>{WEEKLY_TASK.why}</p>
+                  <Textarea value={taskInput} onChange={setTaskInput} placeholder="Cuéntame qué has avanzado esta semana..." rows={3} />
+                  <div style={{ marginTop: 12 }}>
+                    <Btn onClick={analyzeTask} disabled={loadingTask || !taskInput.trim()}>
+                      {loadingTask ? "Analizando..." : "Analizar mi avance"}
+                    </Btn>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        function AnalysisSection() {
+          return <SectionTitle title="Analysis" subtitle="Evaluación de tu presencia profesional." />;
+        }
+
+        function AISection() {
+          return <SectionTitle title="AI & Tu Rol" subtitle="Tu posición real en el mercado de AI design." />;
+        }
+
+        function OffersSection() {
+          return <SectionTitle title="Ofertas" subtitle="Analiza ofertas de trabajo." />;
+        }
+
+        const NAV = [
+          { id: "home",     label: "Home"         },
+          { id: "analysis", label: "Analysis"     },
+          { id: "ai",       label: "AI & Tu Rol"  },
+          { id: "offers",   label: "Ofertas"      },
+        ];
+
+        export default function CareerAgent() {
+          const [active, setActive] = useState("home");
+
+          return (
+            <div style={{ minHeight: "100vh", background: T.bg, fontFamily: FONT_BODY, color: T.ink }}>
+              <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+              <nav style={{ borderBottom: `1px solid ${T.line}`, padding: "0 36px", display: "flex", alignItems: "center", gap: 0, background: T.white, position: "sticky", top: 0, zIndex: 20 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, paddingRight: 32, borderRight: `1px solid ${T.line}`, marginRight: 8 }}>
+                  <div style={{ width: 28, height: 28, background: T.ink, borderRadius: 6, display: "flex", alignItems: "center", justifyContent: "center", color: T.white, fontSize: 12, flexShrink: 0, fontFamily: FONT_DISPLAY }}>✦</div>
+                  <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.04em", color: T.ink, fontFamily: FONT_BODY }}>Career Agent</span>
+                </div>
+                <div style={{ display: "flex", flex: 1, overflowX: "auto" }}>
+                  {NAV.map(s => (
+                    <button key={s.id} onClick={() => setActive(s.id)} style={{
+                      background: "none", border: "none", cursor: "pointer",
+                      padding: "18px 18px", fontSize: 13,
+                      fontWeight: active === s.id ? 600 : 400,
+                      color: active === s.id ? T.ink : T.inkFaint,
+                      borderBottom: active === s.id ? `2px solid ${T.ink}` : "2px solid transparent",
+                      whiteSpace: "nowrap", fontFamily: FONT_BODY,
+                      transition: "all 0.15s", letterSpacing: "0.01em"
+                    }}>{s.label}</button>
+                  ))}
+                </div>
+                <div style={{ marginLeft: "auto", paddingLeft: 20 }}>
+                  <Badge text="Aily Labs" color="sage" />
+                </div>
+              </nav>
+
+              <main style={{ maxWidth: 680, margin: "0 auto", padding: "48px 28px 100px" }}>
+                {active === "home"     && <HomeSection goTo={setActive} />}
+                {active === "analysis" && <AnalysisSection />}
+                {active === "ai"       && <AISection />}
+                {active === "offers"   && <OffersSection />}
+              </main>
+            </div>
+          );
+        }
+
+        ReactDOM.render(<CareerAgent />, document.getElementById('root'));
+    </script>
 </body>
 </html>
