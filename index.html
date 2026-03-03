@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isa 2.0 - Career Market Analyst</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .description {
+            text-align: left;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .description h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+        
+        .features {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        
+        .features h3 {
+            margin-bottom: 15px;
+            color: #764ba2;
+        }
+        
+        .features ul {
+            list-style-position: inside;
+            margin-left: 0;
+        }
+        
+        .features li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+        
+        .tech-stack {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .tech-stack h3 {
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        
+        .links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #f8f9fa;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .container {
+                padding: 40px 25px;
+            }
+            
+            .links {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Isa 2.0 😌</h1>
+        <p class="subtitle">Strategic Career Market Analyst</p>
+        
+        <div class="description">
+            <h2>About Isa</h2>
+            <p>Isa is an intelligent career analysis tool powered by Claude AI and Telegram. Send job descriptions and get strategic insights about the job market, repeated skills, AI-related signals, and culture indicators.</p>
+        </div>
+        
+        <div class="features">
+            <h3>Key Features</h3>
+            <ul>
+                <li>Analyze multiple job descriptions in one message</li>
+                <li>Identify repeated skills across positions</li>
+                <li>Detect AI-related signals in job postings</li>
+                <li>Analyze company culture signals (pressure vs stability)</li>
+                <li>Get personalized strategic insights</li>
+            </ul>
+        </div>
+        
+        <div class="tech-stack">
+            <h3>Technology Stack</h3>
+            <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">Claude AI</span>
+                <span class="tech-tag">Telegram API</span>
+                <span class="tech-tag">React</span>
+            </div>
+        </div>
+        
+        <div class="links">
+            <a href="https://github.com/isabelferrer-dalmau/Isa2.0" class="btn btn-primary">View on GitHub</a>
+            <a href="#readme" class="btn btn-secondary">Documentation</a>
+        </div>
+        
+        <div class="footer">
+            <p>Built with ❤️ for career-focused product designers</p>
+        </div>
+    </div>
+</body>
+</html>

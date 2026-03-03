@@ -1,0 +1,32 @@
+# GitHub Pages Configuration
+theme: null
+remote_theme: null
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# Site settings
+title: Isa 2.0 - Strategic Career Market Analyst
+description: A Telegram bot and AI-powered tool that analyzes job descriptions for product designers
+baseurl: "/Isa2.0"
+url: "https://isabelferrer-dalmau.github.io"
+
+# Build options
+exclude:
+  - app.py
+  - requirements.txt
+  - runtime.txt
+  - src/
+
+# Enable raw HTML
+markdown: kramdown
+input: GFM
+
+# GitHub Pages settings
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
